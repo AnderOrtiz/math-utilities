@@ -1,9 +1,8 @@
-export function findRoots(coeffs: number[], xMin: number, xMax: number): number[] {
+export function findRoots( coeffs: number[], xMin: number, xMax: number, step: number): number[] {
     const valores: number[] = [];
 
-    for (let x = xMin; x <= xMax; x++) {
-        // Calcula el valor del polinomio usando los coeficientes
-        // coeffs[0]*x^n + coeffs[1]*x^(n-1) + ...
+    for (let x = xMin; x <= xMax; x = parseFloat((x + step).toFixed(10))) {
+        // Calcula el valor del polinomio
         let resolv = 0;
         const n = coeffs.length - 1;
 
@@ -11,12 +10,13 @@ export function findRoots(coeffs: number[], xMin: number, xMax: number): number[
             resolv += coeffs[i] * Math.pow(x, n - i);
         }
 
-        if (resolv === 0) {
-            valores.push(x);
+        // Usamos tolerancia en vez de resolv === 0
+        if (Math.abs(resolv) < 1e-6) {
+            valores.push(parseFloat(x.toFixed(5))); // guardamos con 5 decimales
         }
 
-        console.log(`${x} => ${resolv}`);
+        console.log(`${x.toFixed(2)} => ${resolv}`);
     }
-
+//1,-2,-5,6
     return valores;
 }

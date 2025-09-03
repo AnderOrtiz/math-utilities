@@ -13,10 +13,51 @@ div {
   padding: 1rem;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-input, button {
+input,
+button,
+select {
   margin: 0.2rem;
   padding: 0.5rem;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav a {
+  background-color: #6a0dad;
+  /* Morado Freezer */
+  border-radius: 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 0 5px;
+  transition: background 0.3s, transform 0.2s;
+  flex: 1;
+  /* Cada link se ajusta al ancho disponible */
+  text-align: center;
+}
+
+nav a:hover {
+  border-radius: 8px;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    width: 100%;
+  }
 }
