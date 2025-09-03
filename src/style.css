@@ -33,13 +33,12 @@ nav {
 
 nav a {
   background-color: #6a0dad;
-  /* Morado Freezer */
   border-radius: 0.5rem;
   color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 1rem;
-  margin: 0 5px;
+  margin: 5px;
   transition: background 0.3s, transform 0.2s;
   flex: 1;
   /* Cada link se ajusta al ancho disponible */
